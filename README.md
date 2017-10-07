@@ -1,2 +1,5 @@
-# caffe_ocr
-ocr
+代码介绍
+1. caffe代码修改
+2. 部分实验结果
+3. TODO
+
