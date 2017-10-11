@@ -6,12 +6,18 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
   3. WarpCTCLossLayer去掉了对sequence indicators依赖（训练时CNN输出的结构是固定的），简化了网络结构（不需要sequence indicator layer）。<br>
   4. densenet修改了对Reshape没有正确响应的bug，实现了对变长输入预测的支持。<br>
   5. 增加transpose_layer、reverse_layer，实现对CNN feature map与lstm输入shape的适配<br>
-## 主要实验结果
+## 实验
+  1. 数据准备<br>
+  （1）[VGG Synthetic Word Dataset](http://www.robots.ox.ac.uk/~vgg/data/text/)<br>
+  （2）自己生成的中文数据<br>
+  2. 网络设计<br>
+  3. 主要实验结果<br>
+  
 ## 提高准确率TODO
   1. 数据方面:增大数据量，文字均匀采样<br>
   2. 网络方面：Attention,STN,辅助loss<br>
 ## 引用
   1. multi-label的支持(http://blog.csdn.net/hubin232/article/details/50960201)<br>
   2. junhyukoh实现的lstm版本（https://github.com/junhyukoh/caffe-lstm）<br>
-  3. caffe-warp-ctc( )<br>
+  3. caffe-warp-ctc(https://github.com/BVLC/caffe/pull/4681)<br>
   4. memory-efficient densenet(https://github.com/Tongcheng/caffe/)<br>
