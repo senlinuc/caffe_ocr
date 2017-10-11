@@ -3,7 +3,7 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 ## caffe代码修改
   1. data layer增加了对multi-label的支持<br>
   2. lstm使用的是junhyukoh实现的lstm版本（lstm_layer_Junhyuk.cpp/cu），原版不支持变长输入的识别。输入的shape由(TxN)xH改为TxNxH以适应ctc的输入结构。<br>
-  3. WarpCTCLossLayer去掉了对sequence indicators依赖（CNN输出的结构是固定的），简化了网络结构（不需要sequence indicator layer）。<br>
+  3. WarpCTCLossLayer去掉了对sequence indicators依赖（训练时CNN输出的结构是固定的），简化了网络结构（不需要sequence indicator layer）。<br>
   4. densenet修改了对Reshape没有正确响应的bug，实现了对变长输入预测的支持。<br>
   5. 增加transpose_layer、reverse_layer，实现对CNN feature map与lstm输入shape的适配<br>
 ## 主要实验结果
