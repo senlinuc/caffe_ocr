@@ -15,6 +15,7 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
   （1）[VGG Synthetic Word Dataset](http://www.robots.ox.ac.uk/~vgg/data/text/)<br>
   （2）自己生成的中文数据<br>
   2. 网络设计<br>
+     网络结构在examples/ocr目录下
   3. 主要实验结果<br>
   
 ## 提高准确率TODO
