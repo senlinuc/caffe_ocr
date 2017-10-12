@@ -6,6 +6,10 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
   3. WarpCTCLossLayer去掉了对sequence indicators依赖（训练时CNN输出的结构是固定的），简化了网络结构（不需要sequence indicator layer）。<br>
   4. densenet修改了对Reshape没有正确响应的bug，实现了对变长输入预测的支持。<br>
   5. 增加transpose_layer、reverse_layer，实现对CNN feature map与lstm输入shape的适配<br>
+## 编译
+   1. 安装opencv,boost,cuda,其它依赖库在3rdparty下<br>
+   2. caffe-vsproj下为vs2015的工程，配置好依赖库的路径即可编译，编译后会在tools_bin目录下生成训练程序caffe.exe<br>
+   3. 相关的依赖dll可从百度网盘下载（http://pan.baidu.com/s/1boOiscJ）<br>
 ## 实验
   1. 数据准备<br>
   （1）[VGG Synthetic Word Dataset](http://www.robots.ox.ac.uk/~vgg/data/text/)<br>
