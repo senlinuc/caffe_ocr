@@ -1,0 +1,18 @@
+
+net: "ResNet-train_val-5x5.prototxt"
+test_iter: 100
+test_interval: 1000
+test_initialization: false
+display: 200
+base_lr: 0.0001
+lr_policy: "step"
+stepsize: 10000
+gamma: 0.5
+max_iter: 2000000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 2000
+snapshot_prefix: "ResNet-train_val-5x5"
+solver_mode: GPU
+debug_info: false
+#clip_gradients: 10

@@ -1,0 +1,17 @@
+net: "inception_bn_res_train_val-blstm2-res-256-concat-fc-2xlr-cnn-nodropout-imagedata-7x7-9x9-36.prototxt"
+test_iter: 100
+test_interval: 1000
+test_initialization: false
+display: 200
+base_lr: 0.00001
+lr_policy: "step"
+stepsize: 10000
+gamma: 0.5
+max_iter: 200000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 1000
+snapshot_prefix: "inception_bn_res_train_val-blstm2-res-256-concat-fc-2xlr-cnn-nodropout-imagedata-7x7-9x9-36"
+solver_mode: GPU
+debug_info: false
+#clip_gradients: 10
