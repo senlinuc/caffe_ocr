@@ -26,10 +26,17 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 2. 网络设计<br>
    网络结构在examples/ocr目录下<br>
 3. 主要实验结果<br>
-  
-各网络在中文数据集上的预测速度、准确率、模型大小对比
 
-| 网格结构 | CPU | GPU | 准确率 | 模型大小 |
+* VGG Synthetic Word Dataset:
+
+| 网格结构 | predict-CPU | predict-GPU | 准确率-no lexicon | 准确率-lexicon-minctcloss | 模型大小 |
+| ---------- | -----------| ---------- | ---------- | -----------| -----------|
+| inception-bn-res-blstm | 41.62ms | 8.68ms | 0.752 | 0.87 | 15MB |
+| densenet-res-blstm	| N/A	| 6.07ms	| 0.806	| 0.894 | 11MB| 
+
+* 中文数据集:
+
+| 网格结构 | predict-CPU | predict-GPU | 准确率 | 模型大小 |
 | ---------- | -----------| ---------- | -----------| -----------|
 | inception-bn-res-blstm | 65.4ms | 11.2ms | 0.92 | 26.9MB |
 | resnet-res-blstm	| 64ms	| 10.75ms	| 0.91	| 23.2MB| 
@@ -40,7 +47,8 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 >>*   CPU是Xeon E3 1230, GPU是1080TI<br>
 >>*   densenet使用的是memory-efficient版本，其CPU代码并没有使用blas库，只是实现了原始的卷积操作，速度非常慢，待优化后再做对比。<br>
 >>*   “res-blstm”表示残差形式的blstm，“no-blstm”表示没有lstm层，CNN直接对接CTC<br>
->>*   准确率是指整串正确的比例<br>
+>>*   准确率是指整串正确的比例,在验证集上统计<br>
+>>*   predict-CPU/GPU为单张图片的预测时间，分辨率为280x32
 
 4. 一些tricks<br>
   （1） 残差形式的blstm可显著提升准确率，中文数据集上0.94-->0.965<br>
