@@ -43,6 +43,7 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 | densenet-res-blstm	| N/A	| 7.73ms	| 0.965	| 22.9MB| 
 | densenet-no-blstm	| N/A	| 2.4ms	| 0.97	| 5.6MB| 
 
+中文数据集上训练好的模型：http://pan.baidu.com/s/1i5d5zdN
 >说明：<br>
 >>*   CPU是Xeon E3 1230, GPU是1080TI<br>
 >>*   densenet使用的是memory-efficient版本，其CPU代码并没有使用blas库，只是实现了原始的卷积操作，速度非常慢，待优化后再做对比。<br>
@@ -59,7 +60,7 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 6. 现存的问题<br>
   （1）宽度较小的数字、英文字符会出现丢字的情况，如“11”、“ll”，应该是因为CNN特征感受野过大没有看到文字间隙的缘故。<br>
 ## 提高准确率TODO
-  1. 数据方面:增大数据量，文字均匀采样<br>
+  1. 数据方面: 增大数据量，语料库均匀采样(https://yq.aliyun.com/articles/109555?t=t1)<br>
   2. 网络方面：增大网络（train、test loss很接近，现有网络没有过拟合），Attention,STN,辅助loss<br>
 ## 引用
   1. multi-label的支持(http://blog.csdn.net/hubin232/article/details/50960201)<br>
