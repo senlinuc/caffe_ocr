@@ -340,9 +340,6 @@
     <ClCompile Include="..\..\src\caffe\layers\ctc_decoder_layer.cpp">
       <Filter>caffe\layers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\caffe\layers\ctc_loss_layer.cpp">
-      <Filter>caffe\layers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\ctcpp_entrypoint.cpp">
       <Filter>caffe\layers</Filter>
     </ClCompile>
