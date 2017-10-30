@@ -13,7 +13,7 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 ## 实验
 1. 数据准备<br>
   （1）[VGG Synthetic Word Dataset](http://www.robots.ox.ac.uk/~vgg/data/text/)<br>
-  （2）合成的中文数据（http://pan.baidu.com/s/1c2fHpvE）<br>
+  （2）合成的中文数据（http://pan.baidu.com/s/1c2fHpvE ）(包含中文语料库)<br>
   ![](https://github.com/senlinuc/caffe_ocr/blob/master/examples/ocr/20436312_1683447152.jpg)  ![](https://github.com/senlinuc/caffe_ocr/blob/master/examples/ocr/20436328_800384098.jpg)
   ![](https://github.com/senlinuc/caffe_ocr/blob/master/examples/ocr/20436765_2556130357.jpg)  ![](https://github.com/senlinuc/caffe_ocr/blob/master/examples/ocr/20437703_937698549.jpg)
   ![](https://github.com/senlinuc/caffe_ocr/blob/master/examples/ocr/20438234_4066860539.jpg)  ![](https://github.com/senlinuc/caffe_ocr/blob/master/examples/ocr/20440484_2127180630.jpg)
