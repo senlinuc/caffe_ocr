@@ -42,7 +42,8 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 | resnet-res-blstm	| 64ms	| 10.75ms	| 0.91	| 23.2MB| 
 | densenet-res-blstm	| N/A	| 7.73ms	| 0.965	| 22.9MB| 
 | densenet-no-blstm	| N/A	| 2.4ms	| 0.97	| 5.6MB| 
-|densenet-sum-blstm-full-res-blstm|N/A|7.83ms|0.9805|15.5MB||
+|densenet-sum-blstm-full-res-blstm|N/A|7.83ms|0.9805|15.5MB|
+|densenet-no-blstm-vertical-feature|N/A|3.05ms|0.9816|9.6MB|
 
 中文数据集上训练好的模型：http://pan.baidu.com/s/1i5d5zdN
 >说明：<br>
@@ -52,6 +53,7 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 >>*   准确率是指整串正确的比例,在验证集上统计,"准确率-no lexicon"表示没用词典的准确率，"准确率-lexicon-minctcloss"指先在词典中查找Edit Distance <=2的单词，再选择ctcloss最小的单词作为识别结果<br>
 >>*   predict-CPU/GPU为单张图片的预测时间，predict-CPU的后端是openblas，MKL比openblas快约一倍。中文数据集上图片分辨率为280x32，英文数据集100x32
 >>*   densenet-sum-blstm-full-res-blstm相对于densenet-res-blstm有两点改动：（1）两个lstm结合成blstm的方式由concat改为sum；（2）两层blstm都采用残差方式连接（CNN最后的Channel数改为与blstm结点数相同），最后得到了最高的准确率。
+>>*   densenet-no-blstm-vertical-feature相对于densenet-no-blstm去掉了1x4的pooling层，使得CNN最后一层的feature maps的高度为4，更好的保留笔画在垂直方向的变化信息，再reshape BxCxHxW --> Bx(CxH)x1xW串成高度为1的feature maps, 最后准确率上略好于之前的最好结果，可见CNN feature方面还有很多可挖掘的地方。
 4. 一些tricks<br>
   （1） 残差形式的blstm可显著提升准确率，中文数据集上0.94-->0.965，两层BLSTM都用残差后又提升到了0.9805<br>
   （2） 网络的CNN部分相对于BLSTM部分可以设置更高的学习率，这样可以显著增加收敛速度<br>
