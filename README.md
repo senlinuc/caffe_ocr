@@ -31,8 +31,9 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
 
 | 网格结构 | predict-CPU | predict-GPU | 准确率-no lexicon | 准确率-lexicon-minctcloss | 模型大小 |
 | ---------- | -----------| ---------- | ---------- | -----------| -----------|
-| inception-bn-res-blstm | 41.62ms | 8.68ms | 0.752 | 0.87 | 15MB |
-| densenet-res-blstm	| N/A	| 6.07ms	| 0.806	| 0.894 | 11MB| 
+| crnn | 67.13ms | 11.71ms | 0.7519 | 0.8742 | 32MB |
+| inception-bn-res-blstm | 41.62ms | 8.68ms | 0.7353 | 0.8609 | 15MB |
+| densenet-res-blstm	| N/A	| 6.07ms	| 0.7548	| 0.893 | 11MB| 
 
 * 中文数据集:
 
