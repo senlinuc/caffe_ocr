@@ -67,8 +67,9 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
   1. 数据方面: 增大数据量，语料库均匀采样(https://yq.aliyun.com/articles/109555?t=t1)<br>
   2. 网络方面：增大网络（train、test loss很接近，现有网络没有过拟合），Attention,STN,辅助loss<br>
 ## 引用
-  1. multi-label的支持(http://blog.csdn.net/hubin232/article/details/50960201)<br>
-  2. junhyukoh实现的lstm版本（https://github.com/junhyukoh/caffe-lstm）<br>
-  3. caffe-warp-ctc(https://github.com/BVLC/caffe/pull/4681)<br>
-  4. memory-efficient densenet(https://github.com/Tongcheng/caffe/)<br>
-  5. crnn(https://arxiv.org/abs/1507.05717)<br>
+  1. crnn(https://arxiv.org/abs/1507.05717)<br> 
+  2. multi-label的支持(http://blog.csdn.net/hubin232/article/details/50960201)<br>
+  3. junhyukoh实现的lstm版本（https://github.com/junhyukoh/caffe-lstm）<br>
+  4. caffe-warp-ctc(https://github.com/BVLC/caffe/pull/4681)<br>
+  5. memory-efficient densenet(https://github.com/Tongcheng/caffe/)<br>
+ 
