@@ -231,7 +231,7 @@ namespace caffe {
 		int w = bottom[0]->shape()[3];
 
 #ifndef CPU_ONLY
-		reshape_gpu_data(this->H, this->W, h, w);
+		reshape_gpu_data(this->H, this->W,this->N, h, w,batch_size);
 #endif
 		this->N = batch_size;
 		this->H = h;

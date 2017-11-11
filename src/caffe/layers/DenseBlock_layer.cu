@@ -1054,10 +1054,10 @@ namespace caffe {
 	}
 
 	template <typename Dtype>
-	void DenseBlockLayer<Dtype>::reshape_gpu_data(int oldh, int oldw, int h, int w)
+	void DenseBlockLayer<Dtype>::reshape_gpu_data(int oldh, int oldw,int oldn, int h, int w,int newn)
 	{
-		int bufferSize_byte_old = this->N*(this->initChannel + this->growthRate*this->numTransition)*oldh*oldw * sizeof(Dtype);
-		int bufferSize_byte_new = this->N*(this->initChannel + this->growthRate*this->numTransition)*h*w * sizeof(Dtype);
+		int bufferSize_byte_old = oldn*(this->initChannel + this->growthRate*this->numTransition)*oldh*oldw * sizeof(Dtype);
+		int bufferSize_byte_new = newn*(this->initChannel + this->growthRate*this->numTransition)*h*w * sizeof(Dtype);
 		if (bufferSize_byte_new > bufferSize_byte_old)
 		{
 			int bufferSize_byte = bufferSize_byte_new;
@@ -1079,10 +1079,10 @@ namespace caffe {
 			ReallocCudaMem(&this->postReLU_grad_gpu, bufferSize_byte);
 		}
 
-		cudnn::setTensor4dDesc<Dtype>(this->tensorDescriptor_conv_y, this->N, this->growthRate, h, w, (this->numTransition*this->growthRate + this->initChannel)*h*w, h*w, w, 1);
+		cudnn::setTensor4dDesc<Dtype>(this->tensorDescriptor_conv_y, newn, this->growthRate, h, w, (this->numTransition*this->growthRate + this->initChannel)*h*w, h*w, w, 1);
 
-		int quadG_numValues_old = 4 * N*growthRate*oldh*oldw;
-		int quadG_numValues = 4 * N*growthRate*h*w;
+		int quadG_numValues_old = 4 * newn*growthRate*oldh*oldw;
+		int quadG_numValues = 4 * newn*growthRate*h*w;
 		int quadG_numBytes = quadG_numValues * sizeof(Dtype);
 		if (quadG_numValues > quadG_numValues_old)
 		{
@@ -1101,18 +1101,18 @@ namespace caffe {
 		}
 		if (useBC)
 		{
-			cudnn::setTensor4dDesc<Dtype>(quadG_tensorDesc, N, 4 * growthRate, h, w, 4 * growthRate*h*w, h*w, w, 1);
+			cudnn::setTensor4dDesc<Dtype>(quadG_tensorDesc, newn, 4 * growthRate, h, w, 4 * growthRate*h*w, h*w, w, 1);
 		}
 
 		for (int i = 0; i < this->numTransition; ++i)
 		{
 			int conv_x_channels = this->initChannel + this->growthRate * i;
-			cudnn::setTensor4dDesc<Dtype>(this->tensorDescriptorVec_conv_x[i], this->N, conv_x_channels, h, w, (this->numTransition*this->growthRate + this->initChannel)*h*w, h*w, w, 1);
+			cudnn::setTensor4dDesc<Dtype>(this->tensorDescriptorVec_conv_x[i], newn, conv_x_channels, h, w, (this->numTransition*this->growthRate + this->initChannel)*h*w, h*w, w, 1);
 		}
 	}
 
-	template void DenseBlockLayer<float>::reshape_gpu_data(int oldh, int oldw, int h, int w);
-	template void DenseBlockLayer<double>::reshape_gpu_data(int oldh, int oldw, int h, int w);
+	template void DenseBlockLayer<float>::reshape_gpu_data(int oldh, int oldw, int oldn, int h, int w, int newn);
+	template void DenseBlockLayer<double>::reshape_gpu_data(int oldh, int oldw, int oldn, int h, int w, int newn);
 
 	template void DenseBlockLayer<float>::GPU_Initialization();
 	template void DenseBlockLayer<double>::GPU_Initialization();
