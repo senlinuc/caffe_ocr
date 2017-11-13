@@ -52,7 +52,7 @@ class DenseBlockLayer : public Layer<Dtype> {
   virtual void CPU_Initialization();
 
   void GPU_Initialization();
-  void reshape_gpu_data(int oldh, int oldw, int h, int w);
+  void reshape_gpu_data(int oldh, int oldw, int oldn, int h, int w, int newn);
 
   virtual void LoopEndCleanup_cpu();
 
