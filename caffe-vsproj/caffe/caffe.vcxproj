@@ -236,7 +236,6 @@
     <ClCompile Include="..\..\src\caffe\layers\lstm_layer_Junhyuk.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\multinomial_logistic_loss_layer.cpp" />
-    <ClCompile Include="..\..\src\caffe\layers\multi_label_accuracy_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\mvn_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\neuron_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\parameter_layer.cpp" />

@@ -331,9 +331,6 @@
     <ClCompile Include="..\..\src\caffe\layers\rnn_layer.cpp">
       <Filter>caffe\layers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\caffe\layers\multi_label_accuracy_layer.cpp">
-      <Filter>caffe\layers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\tools\caffe.cpp">
       <Filter>tool</Filter>
     </ClCompile>

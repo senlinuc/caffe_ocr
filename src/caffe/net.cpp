@@ -605,8 +605,6 @@ void Net<Dtype>::ForwardDebugInfo(const int layer_id) {
     const Blob<Dtype>& blob = *top_vecs_[layer_id][top_id];
     const string& blob_name = blob_names_[top_id_vecs_[layer_id][top_id]];
     const Dtype data_abs_val_mean = blob.asum_data() / blob.count();
-	if (isnan(data_abs_val_mean))
-		int xxx = 0;
     LOG_IF(INFO, Caffe::root_solver())
         << "    [Forward] "
         << "Layer " << layer_names_[layer_id]

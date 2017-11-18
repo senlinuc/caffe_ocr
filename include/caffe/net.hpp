@@ -191,6 +191,12 @@ class Net {
   const map<string, int>& param_names_index() const {
     return param_names_index_;
   }
+  int layer_index_by_name(const string& name) {
+	  int idx = -1;
+	  if (has_layer(name))
+		  idx = layer_names_index_[name];
+	  return idx;
+  }
   inline const vector<int>& param_owners() const { return param_owners_; }
   inline const vector<string>& param_display_names() const {
     return param_display_names_;
