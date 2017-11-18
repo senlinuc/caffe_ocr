@@ -10,6 +10,9 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
    1. 安装opencv,boost,cuda,其它依赖库在3rdparty下（包含debug版的lib:http://pan.baidu.com/s/1nvIFojJ）<br>
    2. caffe-vsproj下为vs2015的工程，配置好依赖库的路径即可编译，编译后会在tools_bin目录下生成训练程序caffe.exe<br>
    3. 相关的依赖dll可从百度网盘下载（http://pan.baidu.com/s/1boOiscJ）<br>
+## 测试
+   1. 编译caffe-vsproj/libClassification,修改自examples\cpp_classification，实现了模型加载、预测等基本功能。<br>
+   2. 编译caffe-vsproj/ocr_test，实现了中文、英文ocr模型的测试功能，英文ocr包含了直接预测和词典辅助预测（英文词典文件examples/ocr/lexicon.txt）<br>
 ## 实验
 1. 数据准备<br>
   （1）[VGG Synthetic Word Dataset](http://www.robots.ox.ac.uk/~vgg/data/text/)<br>
