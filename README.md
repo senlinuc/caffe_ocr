@@ -75,4 +75,5 @@ caffe_ocr是一个对现有主流ocr算法研究实验性的项目，目前实�
   3. junhyukoh实现的lstm版本（https://github.com/junhyukoh/caffe-lstm）<br>
   4. caffe-warp-ctc(https://github.com/BVLC/caffe/pull/4681)<br>
   5. memory-efficient densenet(https://github.com/Tongcheng/caffe/)<br>
+  6. 语料库（http://www.sogou.com/labs/resource/cs.php）<br>
  
